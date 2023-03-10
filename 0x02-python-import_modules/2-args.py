@@ -2,9 +2,9 @@
 if __name__ == "__main__":
     import sys
     argv = sys.argv
-    #Number of arguments without filename.
+    # Number of arguments without filename.
     argc = (len(argv) - 1)
-    
+
     if argc == 1:
         print("{} argument:".format(argc))
     elif argc > 1:
