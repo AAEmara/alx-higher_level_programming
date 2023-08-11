@@ -4,12 +4,14 @@ if __name__ == "__main__":
     argv = sys.argv
     argc = len(argv)
 
-    print("{:d} arguments".format(argc - 1), end="")
+    print("{:d} argument".format(argc - 1), end="")
 
     if argc == 1:
-        print(".")
-    else:
+        print("s.")
+    elif argc == 2:
         print(":")
+    else:
+        print("s:")
 
     for i in range(1, argc):
         print("{:d}: {:s}".format(i, argv[i]))
