@@ -17,10 +17,6 @@ def safe_print_list_integers(my_list=[], x=0):
         try:
             print("{:d}".format(list_cpy[i]), end='')
 
-        except IndexError:
-            print("\nPlease check the number of values entered to print.")
-            return (count)
-
         except (ValueError, TypeError):
             pass
 
