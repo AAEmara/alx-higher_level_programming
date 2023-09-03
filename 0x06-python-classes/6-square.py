@@ -40,6 +40,7 @@ class Square(object):
 
         if self.__size == 0:
             print()
+            return
 
         for line in range(self.__position[1]):
             print()
@@ -49,7 +50,6 @@ class Square(object):
             for j in range(0, self.__size):
                 print("#", end="")
             print()
-
 
     @property
     def size(self):
