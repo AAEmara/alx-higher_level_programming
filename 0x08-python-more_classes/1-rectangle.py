@@ -1,0 +1,80 @@
+#!/usr/bin/python3
+"""Rectangle class documentation"""
+
+
+class Rectangle:
+    """A Rectangle class."""
+
+    def __init__(self, width=0, height=0):
+        """Initializing the class with a rectangle.
+
+        Args:
+            height (int, 0): Height's initial value of the desired rectangle.
+            width (int, 0): Width's initial value of the desired rectangle.
+
+        """
+        self.__height = height
+        self.__width = width
+
+    @property
+    def width(self):
+        """Getter Function int: Returns the width of the rectangle.
+
+        Setter Function int: Changes the width of the rectangle according to
+                             the value given by the user.
+
+            Args:
+                width (int): Rectangle's width given by user.
+
+        """
+        return self.__width
+
+    @width.setter
+    def width(self, width):
+        """Checks the width's value given by the user and raises an exception
+        if an error occured.
+
+            if the type of width argument is not an integer a TypeError
+            exception is raised.
+
+            else if the value of the width given is less than ZERO a ValueError
+            exception is raised.
+
+        """
+        if type(width) is not int:
+            raise TypeError("width must be an integer")
+        elif width < 0:
+            raise ValueError("width must be >= 0")
+
+        self.__width = width
+
+    @property
+    def height(self):
+        """Getter Function int: Returns the height of the rectangle.
+
+        Setter Function int: Changes the height of the rectangle according to
+                             the value given by the user.
+            Args:
+                height (int): Rectangle's height given by user.
+
+        """
+        return self.__height
+
+    @height.setter
+    def height(self, height):
+        """Checks the height's value given by the user and raises an exception
+        if an error occured.
+
+            if the type of height argument is not an integer a TypeError
+            exception is raised.
+
+            else if the value of the height given is less than ZERO a
+            ValueError exception is raised.
+
+        """
+        if type(height) is not int:
+            raise TypeError("height must be an integer")
+        elif height < 0:
+            raise ValueError("height must be >= 0")
+
+        self.__height = height
