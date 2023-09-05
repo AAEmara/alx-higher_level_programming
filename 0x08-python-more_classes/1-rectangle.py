@@ -13,8 +13,8 @@ class Rectangle:
             width (int, 0): Width's initial value of the desired rectangle.
 
         """
-        self.__height = height
-        self.__width = width
+        self.height = height
+        self.width = width
 
     @property
     def width(self):
