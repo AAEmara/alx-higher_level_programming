@@ -1,0 +1,48 @@
+The ``0-add_integer`` module
+======================
+
+Using ``add_integer``
+-------------------
+
+The following text shows the interactive usage of add_integer(a, b=98)
+
+importing the function from the module:
+
+    >>> add_integer = __import__("0-add_integer").add_integer
+
+Adds two integers:
+
+    >>> add_integer(1, 2)
+    3
+
+    >>> add_integer(-1, -1)
+    -2
+
+    >>> add_integer(-1, 1)
+    0
+
+    >>> add_integer(0, 0)
+    0
+
+    >> add_integer(0, )
+    98
+
+Adds two floats:
+
+    >>> add_integer(2.9, 9.8)
+    11
+
+Adds an integer and a float together too:
+
+    >>> add_integer(5, 50.0)
+    55
+
+Arguments must be integers or floats only:
+
+    >>> add_integer("Hello", 5)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+    >>> add_integer(5, "Hello")
+    Traceback (most recent call last):
+    TypeError: b must be an integer
