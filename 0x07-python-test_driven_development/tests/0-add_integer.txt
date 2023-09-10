@@ -24,7 +24,7 @@ Adds two integers:
     >>> add_integer(0, 0)
     0
 
-    >> add_integer(0, )
+    >> add_integer(0)
     98
 
 Adds two floats:
@@ -46,3 +46,9 @@ Arguments must be integers or floats only:
     >>> add_integer(5, "Hello")
     Traceback (most recent call last):
     TypeError: b must be an integer
+
+At least the first argument must be provided:
+
+    >>> add_integer(None)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
