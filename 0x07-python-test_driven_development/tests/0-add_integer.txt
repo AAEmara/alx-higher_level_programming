@@ -58,3 +58,9 @@ Error will occur if second argument isn't provided:
     >>> add_integer(4, None)
     Traceback (most recent call last):
     TypeError: b must be an integer
+
+Error will occur if no argumen isn't provided:
+
+    >>> add_integer()
+    Traceback (most recent call last):
+    TypeError: add_integer() missing 1 required positional argument: 'a'
