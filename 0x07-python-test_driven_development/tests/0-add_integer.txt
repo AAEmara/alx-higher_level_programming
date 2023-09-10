@@ -59,8 +59,27 @@ Error will occur if second argument isn't provided:
     Traceback (most recent call last):
     TypeError: b must be an integer
 
-Error will occur if no argumen isn't provided:
+Error will occur if one argument is missing:
+
+    >>> add_integer(, 0)
+    Traceback (most recent call last):
+    SyntaxError: invalid syntax
+
+Error will occur if both argument are missing:
 
     >>> add_integer()
     Traceback (most recent call last):
     TypeError: add_integer() missing 1 required positional argument: 'a'
+
+
+Error if passed float of infinity will cause OverflowError:
+
+    >>> add_integer(float('inf'))
+    Traceback (most recent call last):
+    OverflowError: cannot convert float infinity to integer
+
+Error if passed float of Not a Number (NaN) value:
+
+    >>> add_integer(float('nan'))
+    Traceback (most recent call last):
+    ValueError: cannot convert float NaN to integer
