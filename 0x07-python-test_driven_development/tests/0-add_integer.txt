@@ -52,3 +52,9 @@ At least the first argument must be provided:
     >>> add_integer(None)
     Traceback (most recent call last):
     TypeError: a must be an integer
+
+Error will occur if second argument isn't provided:
+
+    >>> add_integer(4, None)
+    Traceback (most recent call last):
+    TypeError: b must be an integer
