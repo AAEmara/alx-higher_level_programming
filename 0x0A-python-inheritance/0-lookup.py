@@ -13,5 +13,5 @@ def lookup(obj):
         list of methods and attributes
     """
 
-    att_methods_list = list(obj.__dict__)
+    att_methods_list = list(dir(obj))
     return (att_methods_list)
