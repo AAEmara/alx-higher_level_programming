@@ -1,0 +1,56 @@
+Testing ``3-say_my_name`` module.
+=================================================
+
+This doctest file tests only one function
+called ``say_my_name(first_name, last_name="")``.
+=================================================
+
+Importing the function:
+
+    >>> say_my_name = __import__("3-say_my_name").say_my_name
+
+First name and Last name must be strings:
+
+    >>> say_my_name("Steven", "Seagull") #first and last name given.
+    My name is Steven Seagull
+
+::
+
+    >>> say_my_name("Mohamed") #only first name.
+    My name is Mohamed 
+
+::
+
+    >>> say_my_name("Joseph", 1) #last name is a number.
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
+
+::
+
+    >>> say_my_name(111, "Jane") #first name is a number.
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+::
+
+    >>> say_my_name(None) #first name is None.
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+::
+    >>> say_my_name("Sara", None) #last name is None.
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
+
+
+Missing one or more arguments:
+
+    >>> say_my_name() #both arguments are missing.
+    Traceback (most recent call last):
+    TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+::
+
+    >>> say_my_name(, "Solomon") #first argument is missing.
+    Traceback (most recent call last):
+    SyntaxError: invalid syntax
