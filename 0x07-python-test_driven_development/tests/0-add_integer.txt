@@ -15,14 +15,22 @@ Adds two integers:
     >>> add_integer(1, 2)
     3
 
+::
+
     >>> add_integer(-1, -1)
     -2
+
+::
 
     >>> add_integer(-1, 1)
     0
 
+::
+
     >>> add_integer(0, 0)
     0
+
+::
 
     >> add_integer(0)
     98
@@ -43,6 +51,8 @@ Arguments must be integers or floats only:
     Traceback (most recent call last):
     TypeError: a must be an integer
 
+::
+
     >>> add_integer(5, "Hello")
     Traceback (most recent call last):
     TypeError: b must be an integer
@@ -52,6 +62,8 @@ At least the first argument must be provided:
     >>> add_integer(None)
     Traceback (most recent call last):
     TypeError: a must be an integer
+
+::
 
     >>> add_integer(None, 4)
     Traceback (most recent call last):
@@ -64,6 +76,12 @@ Error will occur if second argument isn't provided:
     TypeError: b must be an integer
 
 Error will occur if one argument is missing:
+
+    >>> add_integer(None, 0)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+::
 
     >>> add_integer(, 0)
     Traceback (most recent call last):
