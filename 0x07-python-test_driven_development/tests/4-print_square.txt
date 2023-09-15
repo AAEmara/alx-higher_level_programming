@@ -1,0 +1,57 @@
+Testing ``4-print_square`` module.
+===================================
+
+This doctest file tests one function
+called ``print_square(size).
+===================================
+
+Importing the function:
+
+    >>> print_square = __import__("4-print_square").print_square
+
+Print the square with the size given:
+
+    >>> print_square(3)
+    ###
+    ###
+    ###
+
+::
+
+    >>> print_square(2)
+    ##
+    ##
+
+size datatype isn't an integer will result in an error:
+
+    >>> print_square("abc") #size isn't an integer.
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+::
+
+    >>> print_square(0) #size is 0.
+
+::
+
+    >>> print_square(-1) #size is less than 0.
+    Traceback (most recent call last):
+    ValueError: size must be >= 0
+
+::
+
+    >>> print_square(-1.5) #size is a float and less than 0.
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+::
+
+    >>> print_square(None) #size is None.
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+No arguments are given to the function:
+
+    >>> print_square() #no argument given.
+    Traceback (most recent call last):
+    TypeError: print_square() missing 1 required positional argument: 'size'
