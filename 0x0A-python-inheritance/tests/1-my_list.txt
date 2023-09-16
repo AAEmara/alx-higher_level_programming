@@ -1,0 +1,90 @@
+Testing ``1-my_list`` module.
+===================================
+
+This doctest tests only one class
+called MyList from the 1-my_list
+module which contains the following
+method/s:
+    - print_sorted(self)
+===================================
+
+Import the class from the module:
+
+    >>> MyList = __import__("1-my_list").MyList
+
+Appending values to the class:
+
+    >>> list_1 = MyList()
+    >>> list_1.append(1)
+    >>> list_1.append(2)
+    >>> list_1.append(3)
+    >>> list_1
+    [1, 2, 3]
+
+::
+
+    >>> list_2 = MyList()
+    >>> list_2.append(-1)
+    >>> list_2.append(1)
+    >>> list_2.append(0)
+    >>> list_2.print_sorted()
+    [-1, 0, 1]
+
+::
+
+    >>> list_2
+    [-1, 1, 0]
+
+::
+    >>> list_3 = MyList()
+    >>> list_3.append(1)
+    >>> list_3.print_sorted()
+    [1]
+
+::
+
+    >>> list_4 = MyList()
+    >>> list_4.append(4)
+    >>> list_4.append(8)
+    >>> list_4.append(5)
+    >>> list_4.print_sorted()
+    [4, 5, 8]
+
+::
+
+    >>> list_4
+    [4, 8, 5]
+
+::
+
+    >>> list_5 = MyList()
+    >>> list_5.append(9)
+    >>> list_5.append(8)
+    >>> list_5.append(7)
+    >>> list_5.print_sorted()
+    [7, 8, 9]
+
+::
+
+    >>> list_5
+    [9, 8, 7]
+
+::
+
+    >>> list_6 = MyList()
+    >>> list_6.append("Tom")
+    >>> list_6.append("Sam")
+    >>> list_6.append("Nicole")
+    >>> list_6
+    ['Tom', 'Sam', 'Nicole']
+
+::
+
+    >>> list_6.print_sorted() #sorting strings in ascending order.
+    ['Nicole', 'Sam', 'Tom']
+
+No arguments given to the class:
+
+    >>> list_1 = MyList()
+    >>> list_1
+    []
