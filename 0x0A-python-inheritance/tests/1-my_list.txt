@@ -88,3 +88,8 @@ No arguments given to the class:
     >>> list_1 = MyList()
     >>> list_1
     []
+
+::
+
+    >>> list_1.print_sorted()
+    []
