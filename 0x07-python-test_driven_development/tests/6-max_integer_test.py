@@ -22,6 +22,12 @@ class test_max_integer(unittest.TestCase):
         result_3 = max_integer([-1, -2, -3, 0])
         self.assertEqual(result_3, 0)
 
+        result_4 = max_integer([7, 8, 6])
+        self.assertEqual(result_4, 8)
+
+        result_5 = max_integer([1])
+        self.assertEqual(result_5, 1)
+
     def test_input(self):
         """Tests the input of the max_integer function"""
 
