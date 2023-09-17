@@ -21,6 +21,30 @@ Non-integer value as an input to the integer_validator method:
     Traceback (most recent call last):
     TypeError: str_val must be an integer
 
+::
+
+    >>> a.integer_validator("tup_val", (1, 2, 3))
+    Traceback (most recent call last):
+    TypeError: tup_val must be an integer
+
+::
+
+    >>> a.integer_validator("list_val", [1, 2, 3])
+    Traceback (most recent call last):
+    TypeError: list_val must be an integer
+
+::
+
+    >>> a.integer_validator("dict_val", {1, 2, 3})
+    Traceback (most recent call last):
+    TypeError: dict_val must be an integer
+
+::
+
+    >>> a.integer_validator("int_val", None)
+    Traceback (most recent call last):
+    TypeError: int_val must be an integer
+
 Raising exception through area method:
     >>> a.area()
     Traceback (most recent call last):
