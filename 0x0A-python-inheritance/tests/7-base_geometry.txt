@@ -1,0 +1,57 @@
+Testing ``7-base_geometry`` module.
+==========================================
+
+This doctest tests only the class
+called ``BaseGeometry`` with the
+following methods:
+    - area(self)
+    - integer_validator(self, name, value)
+==========================================
+
+
+Importing the class from the module:
+
+    >>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
+
+
+Non-integer value as an input to the integer_validator method:
+
+    >>> a = BaseGeometry()
+    >>> a.integer_validator("str_val", "hello world")
+    Traceback (most recent call last):
+    TypeError: str_val must be an integer
+
+Raising exception through area method:
+    >>> a.area()
+    Traceback (most recent call last):
+    Exception: area() is not implemented
+
+Integer value is less than or equal ZERO:
+
+    >>> a.integer_validator("int_val", -100)
+    Traceback (most recent call last):
+    ValueError: int_val must be greater than 0
+
+::
+
+    >>> a.integer_validator("zero_val", 0)
+    Traceback (most recent call last):
+    ValueError: zero_val must be greater than 0
+
+Missing arguments:
+
+    >>> a.integer_validator() #missing both arguments
+    Traceback (most recent call last):
+    TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+::
+
+    >>> a.integer_validator("int_val") #missing value argument.
+    Traceback (most recent call last):
+    TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+::
+
+    >>> a.integer_validator(, 15) #missing name argument.
+    Traceback (most recent call last):
+    SyntaxError: invalid syntax
