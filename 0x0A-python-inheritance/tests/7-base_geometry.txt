@@ -41,6 +41,16 @@ Non-integer value as an input to the integer_validator method:
 
 ::
 
+    >>> a.integer_validator("bool_val", True)
+    Traceback (most recent call last):
+    TypeError: bool_val must be an integer
+
+::
+
+    >>> a.integer_validator("int_val", 1)
+
+::
+
     >>> a.integer_validator("int_val", None)
     Traceback (most recent call last):
     TypeError: int_val must be an integer
