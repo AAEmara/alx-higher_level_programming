@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-# Displaying the pid of the current process.
-ps r -o pid --no-heading
