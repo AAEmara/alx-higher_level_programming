@@ -46,4 +46,5 @@ class Student:
         Args:
             json (dictionary): JSON obj which is represented as a python dict.
         """
-        return (json)
+        for key in json.keys():
+            self.__dict__[key] = json[key]
