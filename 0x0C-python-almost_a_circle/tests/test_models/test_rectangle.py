@@ -88,3 +88,10 @@ class TestRectangleClass(unittest.TestCase):
             self.case_2.height = 0
             self.case_3.x = -3
             self.case_4.y = -6
+
+    def test_area(self):
+        """Testing the area value of Rectangle Class."""
+        self.assertEqual(self.case_1.area(), 1)
+        self.assertEqual(self.case_2.area(), 20)
+        self.assertEqual(self.case_3.area(), 80)
+        self.assertEqual(self.case_4.area(), 180)
