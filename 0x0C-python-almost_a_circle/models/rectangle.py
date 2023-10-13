@@ -40,6 +40,10 @@ class Rectangle(Base):
         area = self.__width * self.__height
         return (area)
 
+    def display(self):
+        for row in range(self.__height):
+            print("#" * self.__width)
+
     @property
     def width(self):
         """int: Integer value of the rectangle's width."""

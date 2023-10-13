@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """test_rectangle module for unit testing the Rectangle Class."""
 import unittest
+import sys
+from io import StringIO
 from models.rectangle import Rectangle
 
 
@@ -95,3 +97,34 @@ class TestRectangleClass(unittest.TestCase):
         self.assertEqual(self.case_2.area(), 20)
         self.assertEqual(self.case_3.area(), 80)
         self.assertEqual(self.case_4.area(), 180)
+
+    def test_display(self):
+        """Testing the displayed Rectangle instance made of '#' character."""
+        out = StringIO()
+        sys.stdout = out
+        self.case_1.display()
+        output_1 = out.getvalue().strip()
+        self.assertEqual(output_1, "#")
+
+        out = StringIO()
+        sys.stdout = out
+        self.case_2.display()
+        output_2 = out.getvalue().strip()
+        test_2 = ((("#" * self.case_2.width) + "\n") * self.case_2.height)[:-1]
+        self.assertEqual(output_2, test_2)
+
+        out = StringIO()
+        sys.stdout = out
+        self.case_3.display()
+        output_3 = out.getvalue().strip()
+        test_3 = ((("#" * self.case_3.width) + "\n") * self.case_3.height)[:-1]
+        self.assertEqual(output_3, test_3)
+
+        out = StringIO()
+        sys.stdout = out
+        self.case_4.display()
+        output_4 = out.getvalue().strip()
+        test_4 = ((("#" * self.case_4.width) + "\n") * self.case_4.height)[:-1]
+        self.assertEqual(output_4, test_4)
+
+        sys.stdout = sys.stdout
