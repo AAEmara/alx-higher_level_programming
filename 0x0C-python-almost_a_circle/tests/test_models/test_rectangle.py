@@ -128,3 +128,41 @@ class TestRectangleClass(unittest.TestCase):
         self.assertEqual(output_4, test_4)
 
         sys.stdout = sys.stdout
+
+    def test_magic_str(self):
+        """Testing Rectangle's instance string representation."""
+        out = StringIO()
+        sys.stdout = out
+        print(self.case_1)
+        output_1 = out.getvalue().strip()
+        test_1 = f"[Rectangle] ({self.case_1.id}) "
+        test_1 += f"{self.case_1.x}/{self.case_1.y} "
+        test_1 += f"- {self.case_1.width}/{self.case_1.height}"
+        self.assertEqual(output_1, test_1)
+
+        out = StringIO()
+        sys.stdout = out
+        print(self.case_2)
+        output_2 = out.getvalue().strip()
+        test_2 = f"[Rectangle] ({self.case_2.id}) "
+        test_2 += f"{self.case_2.x}/{self.case_2.y} "
+        test_2 += f"- {self.case_2.width}/{self.case_2.height}"
+        self.assertEqual(output_2, test_2)
+
+        out = StringIO()
+        sys.stdout = out
+        print(self.case_3)
+        output_3 = out.getvalue().strip()
+        test_3 = f"[Rectangle] ({self.case_3.id}) "
+        test_3 += f"{self.case_3.x}/{self.case_3.y} "
+        test_3 += f"- {self.case_3.width}/{self.case_3.height}"
+        self.assertEqual(output_3, test_3)
+
+        out = StringIO()
+        sys.stdout = out
+        print(self.case_4)
+        output_4 = out.getvalue().strip()
+        test_4 = f"[Rectangle] ({self.case_4.id}) "
+        test_4 += f"{self.case_4.x}/{self.case_4.y} "
+        test_4 += f"- {self.case_4.width}/{self.case_4.height}"
+        self.assertEqual(output_4, test_4)

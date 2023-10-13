@@ -45,6 +45,11 @@ class Rectangle(Base):
         for row in range(self.__height):
             print("#" * self.__width)
 
+    def __str__(self):
+        """Printing Rectangle's instance default string representation"""
+        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - "\
+            f"{self.width}/{self.height}"
+
     @property
     def width(self):
         """int: Integer value of the rectangle's width."""
