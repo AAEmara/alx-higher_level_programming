@@ -103,28 +103,31 @@ class TestRectangleClass(unittest.TestCase):
         out = StringIO()
         sys.stdout = out
         self.case_1.display()
-        output_1 = out.getvalue().strip()
-        self.assertEqual(output_1, "#")
+        output_1 = out.getvalue()
+        self.assertEqual(output_1, "#\n")
 
         out = StringIO()
         sys.stdout = out
         self.case_2.display()
-        output_2 = out.getvalue().strip()
-        test_2 = ((("#" * self.case_2.width) + "\n") * self.case_2.height)[:-1]
+        output_2 = out.getvalue()
+        test_2 = ((" " * self.case_2.x) + ("#" * self.case_2.width) + "\n") 
+        test_2 = ("\n" * self.case_2.y + test_2 * self.case_2.height)
         self.assertEqual(output_2, test_2)
 
         out = StringIO()
         sys.stdout = out
         self.case_3.display()
-        output_3 = out.getvalue().strip()
-        test_3 = ((("#" * self.case_3.width) + "\n") * self.case_3.height)[:-1]
+        output_3 = out.getvalue()
+        test_3 = ((" " * self.case_3.x) + ("#" * self.case_3.width) + "\n") 
+        test_3 = ("\n" * self.case_3.y + test_3 * self.case_3.height)
         self.assertEqual(output_3, test_3)
 
         out = StringIO()
         sys.stdout = out
         self.case_4.display()
-        output_4 = out.getvalue().strip()
-        test_4 = ((("#" * self.case_4.width) + "\n") * self.case_4.height)[:-1]
+        output_4 = out.getvalue()
+        test_4 = ((" " * self.case_4.x) + ("#" * self.case_4.width) + "\n") 
+        test_4 = ("\n" * self.case_4.y + test_4 * self.case_4.height)
         self.assertEqual(output_4, test_4)
 
         sys.stdout = sys.stdout
