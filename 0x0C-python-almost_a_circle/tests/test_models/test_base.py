@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-"""1-base_test module that tests the Base Class"""
+"""test_base module that tests the Base Class"""
 
 import unittest
 from models.base import Base
