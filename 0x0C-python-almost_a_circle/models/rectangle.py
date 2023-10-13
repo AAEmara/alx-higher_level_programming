@@ -41,6 +41,7 @@ class Rectangle(Base):
         return (area)
 
     def display(self):
+        """Displaying the Rectangle's instance shape using '#' character"""
         for row in range(self.__height):
             print("#" * self.__width)
 
