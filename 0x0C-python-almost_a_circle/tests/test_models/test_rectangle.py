@@ -39,6 +39,20 @@ class TestRectangleClass(unittest.TestCase):
         self.assertEqual(self.case_3.height, 8)
         self.assertEqual(self.case_4.height, 12)
 
+    def test_x_y_value(self):
+        """Tests x, and y values of a Rectangle Class instance."""
+        self.assertEqual(self.case_1.x, 0)
+        self.assertEqual(self.case_1.y, 0)
+
+        self.assertEqual(self.case_2.x, 0)
+        self.assertEqual(self.case_2.y, 0)
+
+        self.assertEqual(self.case_3.x, 3)
+        self.assertEqual(self.case_3.y, 3)
+
+        self.assertEqual(self.case_4.x, 6)
+        self.assertEqual(self.case_4.y, 6)
+
     def test_obj_type(self):
         """Tests instance type vs. Rectangle Class."""
         self.assertIsInstance(self.case_1, Rectangle)
