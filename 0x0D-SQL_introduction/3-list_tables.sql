@@ -1,2 +1,2 @@
--- Reading table names in "mysql" database.
-SHOW TABLES FROM mysql
+-- Reading table names in a database.
+SHOW TABLES
