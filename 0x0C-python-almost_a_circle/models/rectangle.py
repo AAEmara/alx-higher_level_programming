@@ -49,7 +49,6 @@ class Rectangle(Base):
             print(" " * self.__x, end="")
             print("#" * self.__width)
 
-            
     def __str__(self):
         """Printing Rectangle's instance default string representation"""
         return f"[Rectangle] ({self.id}) {self.x}/{self.y} - "\
