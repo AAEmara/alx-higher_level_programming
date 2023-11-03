@@ -49,6 +49,12 @@ class Rectangle(Base):
             print(" " * self.__x, end="")
             print("#" * self.__width)
 
+    def update(self, *args):
+        """Updates the attributes of Rectangle's instance."""
+        attr = list(self.__dict__)
+        for i, arg in enumerate(args):
+            self.__dict__[attr[i]] = arg
+
     def __str__(self):
         """Printing Rectangle's instance default string representation"""
         return f"[Rectangle] ({self.id}) {self.x}/{self.y} - "\

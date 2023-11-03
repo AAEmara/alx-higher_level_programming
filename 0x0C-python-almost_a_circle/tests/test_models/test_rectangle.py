@@ -15,6 +15,7 @@ class TestRectangleClass(unittest.TestCase):
         cls.case_2 = Rectangle(5, 4, id=12)
         cls.case_3 = Rectangle(10, 8, 3, 3)
         cls.case_4 = Rectangle(15, 12, 6, 6, 3)
+        cls.case_5 = Rectangle(1, 4)
 
     @classmethod
     def tearDownClass(cls):
@@ -169,3 +170,12 @@ class TestRectangleClass(unittest.TestCase):
         test_4 += f"{self.case_4.x}/{self.case_4.y} "
         test_4 += f"- {self.case_4.width}/{self.case_4.height}"
         self.assertEqual(output_4, test_4)
+
+    def test_update(self):
+        """Checks that the attributes are update by the update function."""
+        self.case_5.update(4, 4, 6, 3, 3)
+        self.assertEqual(self.case_5.id, 4)
+        self.assertEqual(self.case_5.width, 4)
+        self.assertEqual(self.case_5.height, 6)
+        self.assertNotEqual(self.case_5.x, 0)
+        self.assertNotEqual(self.case_5.y, 0)
