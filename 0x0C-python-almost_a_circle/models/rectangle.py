@@ -67,6 +67,15 @@ class Rectangle(Base):
                 else:
                     self.__dict__[key] = val
 
+    def to_dictionary(self):
+        """Returns a dictionary representation of the Rectangle Class."""
+        keys = ["id", "width", "height", "x", "y"]
+        new_dict = dict()
+        for i, key in enumerate(self.__dict__):
+            new_dict[keys[i]] = self.__dict__[key]
+
+        return (new_dict)
+
     @property
     def width(self):
         """int: Integer value of the rectangle's width."""
