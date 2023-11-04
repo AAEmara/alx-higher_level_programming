@@ -12,6 +12,21 @@ class Square(Rectangle):
     def __str__(self):
         return f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
 
+    def update(self, *args, **kwargs):
+        """Updates the Square Class attributes."""
+        attr = list(args)
+        keys = list(self.__dict__)
+        if len(args):
+            for i, val in enumerate(args):
+                if i == 2:
+                    self.__dict__[keys[i]] = self.__dict__[keys[i - 1]]
+                if i >= 2:
+                    i += 1
+                self.__dict__[keys[i]] = val
+        else:
+            for key, val in kwargs.items():
+                setattr(self, key, val)
+
     @property
     def size(self):
         """int: Integer value of the square's side length."""
