@@ -42,3 +42,9 @@ class Base:
                 for obj in list_objs:
                     objs.append(obj.to_dictionary())
                 w_file.write(Base.to_json_string(objs))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """Returns a list JSON string representation from a JSON string."""
+        json_repr = json.loads(json_string)
+        return (json_repr)
