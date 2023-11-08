@@ -2,7 +2,6 @@
 """base module that includes the Base Class."""
 import json
 
-
 class Base:
     """Base Class that manages the id attribute in all subclasses."""
     __nb_objects = 0
@@ -27,3 +26,14 @@ class Base:
         else:
             json_obj = json.dumps(list_dictionaries)
             return (json_obj)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """Writes JSON string representation of a list of objects to a file."""
+
+        filename = cls.__name__ + ".json"
+        objs = list()
+        with open(filename, mode="w", encoding="utf-8") as w_file:
+            for obj in list_objs:
+                objs.append(obj.to_dictionary())
+            w_file.write(Base.to_json_string(objs))
