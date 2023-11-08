@@ -2,6 +2,7 @@
 """base module that includes the Base Class."""
 import json
 
+
 class Base:
     """Base Class that manages the id attribute in all subclasses."""
     __nb_objects = 0
@@ -33,7 +34,11 @@ class Base:
 
         filename = cls.__name__ + ".json"
         objs = list()
+
         with open(filename, mode="w", encoding="utf-8") as w_file:
-            for obj in list_objs:
-                objs.append(obj.to_dictionary())
-            w_file.write(Base.to_json_string(objs))
+            if list_objs is None:
+                w_file.write("[]")
+            else:
+                for obj in list_objs:
+                    objs.append(obj.to_dictionary())
+                w_file.write(Base.to_json_string(objs))
