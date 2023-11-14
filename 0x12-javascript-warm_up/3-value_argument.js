@@ -1,16 +1,15 @@
 #!/usr/bin/node
-const { argv } = require('node:process');
+const args = process.argv;
 let i = 0;
-while (argv[i]) {
+while (args[i]) {
   i++;
 }
 if (i === 2) {
   console.log('No Argument');
-}
-else {
+} else {
   i = 2;
-  while (argv[i]) {
-    console.log(argv[i]);
+  while (args[i]) {
+    console.log(args[i]);
     i++;
   }
 }
