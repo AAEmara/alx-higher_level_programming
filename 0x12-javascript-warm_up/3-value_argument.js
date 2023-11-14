@@ -5,7 +5,7 @@ while (args[i]) {
   i++;
 }
 if (i === 2) {
-  console.log('No Argument');
+  console.log('No argument');
 } else {
   i = 2;
   while (args[i]) {
