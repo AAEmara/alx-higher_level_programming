@@ -6,11 +6,11 @@ if (process.argv[2] === undefined || process.argv[3] === undefined) {
   let Num2 = parseInt(process.argv[3]);
   let i = 3;
   while (parseInt(process.argv[i])) {
-    if (process.argv[i] > Num1) {
+    if (parseInt(process.argv[i]) > Num1) {
       Num2 = Num1;
-      Num1 = process.argv[i];
-    } else if (process.argv[i] > Num2) {
-      Num2 = process.argv[i];
+      Num1 = parseInt(process.argv[i]);
+    } else if (parseInt(process.argv[i]) > Num2) {
+      Num2 = parseInt(process.argv[i]);
     }
     i++;
   }
