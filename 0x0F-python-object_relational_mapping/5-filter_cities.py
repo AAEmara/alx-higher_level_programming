@@ -13,7 +13,7 @@ if __name__ == "__main__":
              FROM cities AS c\
              JOIN states AS s\
              ON c.state_id = s.id\
-             WHERE s.name = %s\
+             WHERE s.name LIKE BINARY %s\
              ORDER BY c.id ASC;"
     cur.execute(query, (args[4],))
     rows = cur.fetchall()
