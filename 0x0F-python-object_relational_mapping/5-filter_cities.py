@@ -21,4 +21,5 @@ if __name__ == "__main__":
         if (i < (len(rows) - 1)):
             print(row[0], end=', ')
         else:
-            print(row[0], end='\n')
+            print(row[0], end='')
+    print()
