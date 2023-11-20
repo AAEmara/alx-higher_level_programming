@@ -16,6 +16,7 @@ if __name__ == "__main__":
     session = Session()
     state_obj = State(name="Louisiana")
     session.add(state_obj)
+    session.commit()
     instance = session.query(State).filter(text("name LIKE BINARY :name"))\
         .params(name="Louisiana").first()
 
