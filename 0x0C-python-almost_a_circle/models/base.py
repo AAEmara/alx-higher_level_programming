@@ -56,8 +56,8 @@ class Base:
     def create(cls, **dictionary):
         """Returns an instance with all attributes set."""
         if cls.__name__ == "Rectangle":
-            instance = cls(id=0, width=5, height=5, x=0, y=0)
+            instance = cls(width=5, height=5, x=0, y=0)
         elif cls.__name__ == "Square":
-            instance = cls(id=0, size=5, x=0, y=0)
+            instance = cls(size=5, x=0, y=0)
         instance.update(**dictionary)
         return (instance)
