@@ -19,4 +19,4 @@ if __name__ == "__main__":
     instances = session.query(City).order_by(City.id)
 
     for instance in instances:
-        print(instance.states.name, instance.id, instance.name)
+        print(f"{instance.states.name}: ({instance.id}) {instance.name}")
