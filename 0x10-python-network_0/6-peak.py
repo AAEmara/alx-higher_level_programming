@@ -5,7 +5,7 @@
 def find_peak(nums):
     """A function that takes a list and returns the highest number."""
     count = len(nums)
-    if count == 0:
+    if count == 0 or nums is None:
         return (None)
     else:
         for i in range(1, count):
