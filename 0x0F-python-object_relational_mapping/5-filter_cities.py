@@ -18,4 +18,6 @@ if __name__ == "__main__":
         if i < len(rows) - 1:
             print(rows[i][0], end=", ")
         elif i == len(rows) - 1:
-            print(rows[i][0])
+            print(rows[i][0], end="")
+
+    print()
