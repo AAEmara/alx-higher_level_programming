@@ -9,7 +9,7 @@ if __name__ == "__main__":
                          database=sys.argv[3])
     cur = db.cursor()
     cur.execute("""SELECT c.id, c.name, s.name FROM states AS s
-        LEFT JOIN cities AS c
+        JOIN cities AS c
         ON c.state_id = s.id
         ORDER BY c.id ASC;""")
     rows = cur.fetchall()
