@@ -14,7 +14,7 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     Session.configure(bind=engine)
     session = Session()
-    State.cities = relationship("City", back_populates="states")
+    State.cities = relationship("City", back_populates="state")
     instances = session.query(City).order_by(City.id)
     for instance in instances:
-        print(f'{isntance.state.name}: {instance.id} {instance.name}')
+        print(f'{instance.state.name}: ({instance.id}) {instance.name}')
