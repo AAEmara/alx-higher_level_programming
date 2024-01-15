@@ -14,9 +14,9 @@ if __name__ == "__main__":
     Session.configure(bind=engine)
     session = Session()
     instance = session.query(State).filter(text("name=:value")).\
-        params(value=sys.argv[4]).one()
+        params(value=sys.argv[4]).first()
 
     if (instance is None):
         print("Not found")
     else:
-        print(f"{instance.id}")
+        print(instance.id)
