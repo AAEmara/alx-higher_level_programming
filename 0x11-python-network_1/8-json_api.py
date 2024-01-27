@@ -13,8 +13,11 @@ if __name__ == "__main__":
         letter = sys.argv[1]
 
     r = requests.post(url, data={"q": letter})
-    r = r.json()
-    if (not r):
-        print("No result")
-    else:
-        print(f"[{r['id']}] {r['name']}")
+    try:
+        r = r.json()
+        if (not r):
+            print("No result")
+        else:
+            print(f"[{r['id']}] {r['name']}")
+    except requests.exceptions.JSONDecodeError:
+        print("Not a valid JSON")
