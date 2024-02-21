@@ -11,21 +11,25 @@ request(idUrl, (error, response, body) => {
   }
   const data = JSON.parse(body);
   const dataResults = data.results;
+  let charactersTotal = 0;
+
   for (let i = 0; i < dataResults.length; i++) {
-    for (let j = 0; j < dataResults[i].characters.length; j++) {
+    charactersTotal = dataResults[i].characters.length;
+    for (let j = 0; j < charactersTotal; j++) {
       request(dataResults[i].characters[j], (error, response, body) => {
         if (error) {
           console.log(error);
           return;
         }
-        let characterData = JSON.parse(body);
-        let characterName = characterData.name
-        console.log(characterName);
-        if (characterName === "Wedge Antilles") {
-          count ++;
+        const characterData = JSON.parse(body);
+        const characterName = characterData.name;
+        if (characterName === 'Wedge Antilles') {
+          count++;
+        }
+        if (i === (dataResults.length - 1) && j === (charactersTotal - 1)) {
+          console.log(count);
         }
       });
     }
   }
 });
-console.log(count);
