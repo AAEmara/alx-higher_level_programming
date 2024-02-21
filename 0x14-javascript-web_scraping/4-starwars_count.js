@@ -16,20 +16,12 @@ request(idUrl, (error, response, body) => {
   for (let i = 0; i < dataResults.length; i++) {
     charactersTotal = dataResults[i].characters.length;
     for (let j = 0; j < charactersTotal; j++) {
-      request(dataResults[i].characters[j], (error, response, body) => {
-        if (error) {
-          console.log(error);
-          return;
-        }
-        const characterData = JSON.parse(body);
-        const characterName = characterData.name;
-        if (characterName === 'Wedge Antilles') {
-          count++;
-        }
-        if (i === (dataResults.length - 1) && j === (charactersTotal - 1)) {
-          console.log(count);
-        }
-      });
+      if (dataResults[i].characters[j].endsWith('18/')) {
+        count++;
+      }
+      if (i === (dataResults.length - 1) && j === (charactersTotal - 1)) {
+        console.log(count);
+      }
     }
   }
 });
